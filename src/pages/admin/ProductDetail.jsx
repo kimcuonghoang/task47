@@ -14,7 +14,7 @@ const ProductDetail = () => {
     fetchData();
   }, [id]);
 
-  if (!todo) return <div className="text-center">Đang tải...</div>;
+  if (!todo) return <div className="text-center">Loading ...</div>;
 
   return (
     <div className="container mt-5">
