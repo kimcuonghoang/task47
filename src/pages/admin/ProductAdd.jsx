@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { createProduct } from "./../../api/productApi";
 
 const ProductAdd = () => {
@@ -21,6 +21,7 @@ const ProductAdd = () => {
       data.completed = data.completed === "true";
       await createProduct(data);
       toast.success("Tạo mới todo thành công!");
+
       reset();
     } catch (err) {
       console.error(err);
@@ -30,6 +31,9 @@ const ProductAdd = () => {
 
   return (
     <div className="container mt-5">
+      <Link to="/admin/product" className="btn btn-primary">
+        Trở lại
+      </Link>
       <h2 className="text-center mb-4">Thêm mới Todo</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">

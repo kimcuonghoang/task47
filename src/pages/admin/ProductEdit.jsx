@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { getProductDetail, updateProduct } from "../../api/productApi";
 
@@ -14,7 +14,7 @@ const ProductEdit = () => {
     const fetchTodo = async () => {
       try {
         const todo = await getProductDetail(id);
-        reset(todo); // ✅ Reset với data đã fetch
+        reset(todo);
         setLoading(false);
       } catch (error) {
         toast.error("Lỗi khi tải dữ liệu!");
@@ -26,9 +26,9 @@ const ProductEdit = () => {
 
   const onSubmit = async (data) => {
     try {
-      await updateProduct(id, data); // ✅ Truyền đúng thứ tự id, data
+      await updateProduct(id, data);
       toast.success("Cập nhật thành công!");
-      navigate("/");
+      navigate("/admin/product");
     } catch (error) {
       toast.error("Cập nhật thất bại!");
       console.error(error);
@@ -39,6 +39,9 @@ const ProductEdit = () => {
 
   return (
     <div className="container mt-5">
+      <Link to="/admin/product" className="btn btn-primary">
+        Trở lại
+      </Link>
       <h2>Sửa Todo</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">

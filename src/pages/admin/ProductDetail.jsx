@@ -35,7 +35,7 @@ const ProductDetail = () => {
       <p>
         <strong>Ngày tạo:</strong> {todo.createdAt}
       </p>
-      <Link to="/" className="btn btn-secondary">
+      <Link to="/admin/product" className="btn btn-secondary">
         Quay lại
       </Link>
     </div>

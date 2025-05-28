@@ -52,9 +52,11 @@ const Product = () => {
 
   return (
     <div className="container mt-5">
+      <Link to="add" className="btn btn-primary">
+        Thêm mới Todo
+      </Link>
       <h2 className="text-center">Danh sách Todo</h2>
 
-      {/* Tìm kiếm + lọc */}
       <div className="row mb-3">
         <div className="col-md-4">
           <input
@@ -95,7 +97,6 @@ const Product = () => {
         </div>
       </div>
 
-      {/* Danh sách todo */}
       <table className="table table-bordered table-striped">
         <thead>
           <tr>
@@ -126,7 +127,7 @@ const Product = () => {
                     Đổi trạng thái
                   </button>
                   <Link
-                    to={`/product/${todo.id}`}
+                    to={`${todo.id}`}
                     className="btn btn-sm btn-secondary me-1"
                   >
                     Chi tiết
@@ -156,7 +157,6 @@ const Product = () => {
         </tbody>
       </table>
 
-      {/* Phân trang */}
       <div className="text-center">
         <button
           className="btn btn-outline-primary me-2"
