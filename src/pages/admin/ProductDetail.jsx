@@ -18,7 +18,7 @@ const ProductDetail = () => {
 
   return (
     <div className="container mt-5">
-      <h2>Chi tiết Todo</h2>
+      <h2 className="text-center">Chi tiết Todo</h2>
       <p>
         <strong>Tiêu đề:</strong> {todo.title}
       </p>

@@ -42,7 +42,7 @@ const ProductEdit = () => {
       <Link to="/admin/product" className="btn btn-primary">
         Trở lại
       </Link>
-      <h2>Sửa Todo</h2>
+      <h2 className="text-center">Sửa Todo</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">
           <label>Tiêu đề</label>
